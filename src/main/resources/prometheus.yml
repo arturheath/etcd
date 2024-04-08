@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'my-application'
+    static_configs:
+      - targets: ['host.docker.internal:8080']
+  - job_name: 'etcd'
+    static_configs:
+      - targets: ['host.docker.internal:2379', 'host.docker.internal:2381', 'host.docker.internal:2383', 'host.docker.internal:2385']
